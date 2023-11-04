@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mithril": "^2.2.2",
+    "tonal": "^5.0.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.10.2",
+    "parcel": "^2.10.2"
+  }
+}

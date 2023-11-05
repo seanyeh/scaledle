@@ -120,11 +120,11 @@ export default class Util {
     let newName = scaleName.replace(/[0-9]/, "");
 
     // Rename diminished scales to octatonic
-    if (scaleName.includes("half-whole diminished")) {
-      newName = scaleName.replace("half-whole diminished", "octatonic (half-whole)");
+    if (newName.includes("half-whole diminished")) {
+      newName = newName.replace("half-whole diminished", "octatonic (half-whole)");
     }
-    else if (scaleName.includes("diminished")) {
-      newName = scaleName.replace("diminished", "octatonic (whole-half)");
+    else if (newName.includes("diminished")) {
+      newName = newName.replace("diminished", "octatonic (whole-half)");
     }
 
     return newName;

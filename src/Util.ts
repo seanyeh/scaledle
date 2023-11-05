@@ -104,7 +104,7 @@ export default class Util {
     "W": "🟨",
     "X": "⬛"
   }
-  static readonly URL = "seanyeh.github.io/scaldle";
+  static readonly URL = "seanyeh.github.io/scaledle";
 
   static resultsToShareable(resultsList, puzzleNumber): string {
     const tries = resultsList.length;

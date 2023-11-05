@@ -112,7 +112,7 @@ export default class Util {
       `${results.map((x) => Util.EMOJI_MAP[x]).join("")}\n`
     )).join("");
 
-    return `Scale-dle #${puzzleNumber}\n${resultsStr}\n${Util.URL}`;
+    return `Scale-dle #${puzzleNumber} ${tries}/6\n${resultsStr}\n${Util.URL}`;
   }
 
   static normalizeScaleName(scaleName) {

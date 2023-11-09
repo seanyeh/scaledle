@@ -28,12 +28,14 @@ export default class HelpContent {
 
   <p>
   Scale-dle was inspired by
-  <a href="https://www.nytimes.com/games/wordle/">Wordle</a>
-  and was created for the 2023 GitHub Game Off.
+  <a href="https://www.nytimes.com/games/wordle/" target="_blank">Wordle</a>
+  and was developed for the
+  <a href="https://itch.io/jam/game-off-2023" target="_blank">2023 GitHub Game Off</a>
+  game jam.
   </p>
 
   <p>
-  Check out the code on <a href="https://github.com/seanyeh/scaledle">GitHub!</a>
+  Check out the code on <a href="https://github.com/seanyeh/scaledle" target="_blank">GitHub!</a>
   </p>
   `;
 

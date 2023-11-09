@@ -84,7 +84,7 @@ export default class Keyboard {
       oncreate: (vnode) => {
         const ctx = vnode.dom.getContext("2d");
         this.drawKeyboard(ctx);
-        vnode.dom.addEventListener('click', this.onclick.bind(this));
+        vnode.dom.addEventListener("click", this.onclick.bind(this));
       }
     }
 

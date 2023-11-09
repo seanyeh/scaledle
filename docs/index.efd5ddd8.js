@@ -416,13 +416,15 @@ lastCell(){let e=this.getNextCellIndex();return -1===e?this.cells[this.cells.len
 
   <p>
   Scale-dle was inspired by
-  <a href="https://www.nytimes.com/games/wordle/">Wordle</a>
-  and was created for the 2023 GitHub Game Off.
+  <a href="https://www.nytimes.com/games/wordle/" target="_blank">Wordle</a>
+  and was developed for the
+  <a href="https://itch.io/jam/game-off-2023" target="_blank">2023 GitHub Game Off</a>
+  game jam.
   </p>
 
   <p>
-  Check out the code on <a href="https://github.com/seanyeh/scaledle">GitHub!</a>
+  Check out the code on <a href="https://github.com/seanyeh/scaledle" target="_blank">GitHub!</a>
   </p>
-  `;view(){return(0,a.default).trust(i.CONTENT)}}n.default=i},{mithril:"13PaA","@parcel/transformer-js/src/esmodule-helpers.js":"k3151"}]},["bn6ru"],"bn6ru","parcelRequire94c2")//# sourceMappingURL=index.14c6f0a4.js.map
+  `;view(){return(0,a.default).trust(i.CONTENT)}}n.default=i},{"@parcel/transformer-js/src/esmodule-helpers.js":"k3151",mithril:"13PaA"}]},["bn6ru"],"bn6ru","parcelRequire94c2")//# sourceMappingURL=index.efd5ddd8.js.map
 ;
-//# sourceMappingURL=index.14c6f0a4.js.map
+//# sourceMappingURL=index.efd5ddd8.js.map

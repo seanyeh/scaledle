@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "rm -rf docs && npx parcel build index.html --dist-dir=docs --no-scope-hoist --public-url=/scaledle",
+    "serve": "npx parcel serve index.html"
+  },
   "dependencies": {
     "mithril": "^2.2.2",
     "tonal": "^5.0.0"

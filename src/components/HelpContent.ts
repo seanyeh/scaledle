@@ -4,7 +4,7 @@ export default class HelpContent {
   static readonly CONTENT = `
   <h1>How to Play</h1>
   <p>
-  Guess the Scale-dle in 6 tries.
+  Guess the Scaledle in 6 tries.
   </p>
 
   <p>
@@ -27,11 +27,10 @@ export default class HelpContent {
   </p>
 
   <p>
-  Scale-dle was inspired by
+  Scaledle was inspired by
   <a href="https://www.nytimes.com/games/wordle/" target="_blank">Wordle</a>
-  and was developed for the
-  <a href="https://itch.io/jam/game-off-2023" target="_blank">2023 GitHub Game Off</a>
-  game jam.
+  and was developed for
+  <a href="https://itch.io/jam/game-off-2023" target="_blank">GitHub Game Off 2023</a>.
   </p>
 
   <p>

@@ -124,7 +124,7 @@ export default class MainPage {
   view() {
     return [
       m("div#nav", [
-        m("h1", "Scale-dle"),
+        m("h1", "Scaledle"),
         m("div#help", { onclick: () => { this.openHelpModal(); }}, m.trust(MainPage.HELP_ICON)),
       ]),
       this.modalContent ? m(this.modal, m(this.modalContent)) : null,

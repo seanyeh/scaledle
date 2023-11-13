@@ -2,10 +2,12 @@ import m from "mithril";
 
 import Util from "../Util";
 
+type Rect = [number, number, number, number];
+
 export default class Keyboard {
   callback: any;
-  blackKeys: any[];
-  whiteKeys: any[];
+  blackKeys: Rect[];
+  whiteKeys: Rect[];
 
   constructor(callback: any) {
     this.callback = callback;

@@ -15,10 +15,10 @@ export default class MainPage {
   scaleNumber: number;
 
   currentRowIndex: number;
-  keyboard: any;
-  controlButtons: any;
-  rows: any[];
-  modal: any;
+  keyboard: Keyboard;
+  controlButtons: ControlButtons;
+  rows: Row[];
+  modal: Modal;
   modalContent: any;
 
   isFinished: boolean;

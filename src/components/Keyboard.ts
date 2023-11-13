@@ -5,12 +5,12 @@ import Util from "../Util";
 type Rect = [number, number, number, number];
 
 export default class Keyboard {
-  callback: any;
+  onKeyPress: (k: string) => void;
   blackKeys: Rect[];
   whiteKeys: Rect[];
 
-  constructor(callback: any) {
-    this.callback = callback;
+  constructor(onKeyPress: (k: string) => void) {
+    this.onKeyPress = onKeyPress;
   }
 
   initShapes(ctx: CanvasRenderingContext2D) {
@@ -34,18 +34,18 @@ export default class Keyboard {
     return px >= x && py >= y && px <= (x + w) && py <= (y + h);
   }
 
-  onclick(e: any) {
+  onclick(e: MouseEvent) {
     const px = e.offsetX;
     const py = e.offsetY;
 
     let index = this.blackKeys.findIndex(([x, y, w, h]) => this._inBounds(px, py, x, y, w, h));
     if (index !== -1) {
-      return this.callback(Util.BLACK_NOTES[index]);
+      return this.onKeyPress(Util.BLACK_NOTES[index]);
     }
 
     index = this.whiteKeys.findIndex(([x, y, w, h]) => this._inBounds(px, py, x, y, w, h));
     if (index !== -1) {
-      return this.callback(Util.WHITE_NOTES[index]);
+      return this.onKeyPress(Util.WHITE_NOTES[index]);
     }
   }
 

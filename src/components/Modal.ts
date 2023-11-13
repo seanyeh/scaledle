@@ -1,9 +1,9 @@
 import m from "mithril";
 
 export default class Modal {
-  onclose: any;
+  onclose: () => void;
 
-  constructor(onclose: any) {
+  constructor(onclose: () => void) {
     this.onclose = onclose;
   }
 

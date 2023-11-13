@@ -7,10 +7,10 @@ export default class Row {
   cells: Cell[];
 
   constructor() {
-    this.cells = new Array(7).fill().map((_, i) => new Cell(i));
+    this.cells = new Array(7).fill(null).map((_, i) => new Cell(i));
   }
 
-  compareWithAnswer(answerScale) {
+  compareWithAnswer(answerScale: any) {
     const answerMidis = Util.toMidiArray(answerScale.notes);
     const guessMidis = Util.toMidiArray(this.getNotes());
 
@@ -30,7 +30,7 @@ export default class Row {
     }
   }
 
-  displayResults(results) {
+  displayResults(results: string[]) {
     this.cells.forEach((cell, i) => cell.setStatus(results[i]));
   }
 
@@ -86,18 +86,20 @@ export default class Row {
 }
 
 class Cell {
-  value: string;
+  column: number;
+  flipped: boolean;
   status: string;
+  value: string;
 
   // Corresponding CSS classes
-  static readonly STATUS_CLASSES = {
+  static readonly STATUS_CLASSES: {[key: string]: string} = {
     "C": "correct",
     "W": "wrong-position",
     "X": "wrong",
     " ": "none"
   }
 
-  constructor(column) {
+  constructor(column: number) {
     this.column = column; // Used for css delay
 
     this.value = null;

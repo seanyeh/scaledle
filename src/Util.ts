@@ -35,12 +35,12 @@ export default class Util {
   static readonly BLACK_NOTES_FLAT = ["Db", "Eb", "Gb", "Ab", "Bb"];
   static readonly WHITE_NOTES = ["C", "D", "E", "F", "G", "A", "B"];
 
-  static getRandomScaleNumber() {
+  static getRandomScaleNumber(): number {
     // TODO: use the proper algorithm rather than assuming 12 roots and scale types
     return Math.floor(Math.random() * 144);
   }
 
-  static getScaleByNumber(i: number) {
+  static getScaleByNumber(i: number): any {
     // TODO: use the proper algorithm rather than assuming 12 roots and scale types
     const root = this.ROOTS[i%12];
     const scaleType = this.SCALE_TYPES[Math.floor(i/12)];
@@ -50,21 +50,21 @@ export default class Util {
   }
 
   // Get midi array
-  static toMidiArray(notes) {
-    return notes.map((noteName) => Note.get(noteName).midi % 12);
+  static toMidiArray(notes: any[]): number[] {
+    return notes.map((noteName: any) => Note.get(noteName).midi % 12);
   }
 
   // Returns an array of results:
   // "C": correct,
   // "W": wrong spot,
   // "X": does not exist
-  static calculateGuess(guess, rawAnswer) {
+  static calculateGuess(guess: number[], rawAnswer: number[]) {
     // Normalize correct to be same length as guess
     const answer = rawAnswer.concat(rawAnswer).slice(0, guess.length);
 
     // Make map of answer to track note usage
-    const answerMap = {};
-    answer.forEach((note) => {
+    const answerMap: {[key: number]: number} = {};
+    answer.forEach((note: number) => {
       if (!(note in answerMap)) {
         answerMap[note] = 0;
       }
@@ -74,7 +74,7 @@ export default class Util {
     const result = Array(guess.length);
 
     // First pass to find correct notes
-    guess.forEach((note, i) => {
+    guess.forEach((note: number, i: number) => {
       if (note === answer[i]) {
         result[i] = "C";
         answerMap[note]--;
@@ -82,7 +82,7 @@ export default class Util {
     });
 
     // Second pass to figure out the other results
-    guess.forEach((note, i) => {
+    guess.forEach((note: number, i: number) => {
       if (result[i] === "C") {
         return;
       }
@@ -99,23 +99,23 @@ export default class Util {
     return result;
   }
 
-  static readonly EMOJI_MAP = {
+  static readonly EMOJI_MAP: {[key: string]: string} = {
     "C": "🟩",
     "W": "🟨",
     "X": "⬛"
   }
   static readonly URL = "seanyeh.github.io/scaledle";
 
-  static resultsToShareable(resultsList, puzzleNumber): string {
+  static resultsToShareable(resultsList: string[][], puzzleNumber: number): string {
     const tries = resultsList.length;
-    const resultsStr = resultsList.map((results) => (
-      `${results.map((x) => Util.EMOJI_MAP[x]).join("")}\n`
+    const resultsStr = resultsList.map((results: string[]) => (
+      `${results.map((x: string) => Util.EMOJI_MAP[x]).join("")}\n`
     )).join("");
 
     return `Scale-dle #${puzzleNumber} ${tries}/6\n${resultsStr}\n${Util.URL}`;
   }
 
-  static normalizeScaleName(scaleName) {
+  static normalizeScaleName(scaleName: string) {
     // Remove octave from name
     let newName = scaleName.replace(/[0-9]/, "");
 

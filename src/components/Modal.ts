@@ -1,11 +1,13 @@
 import m from "mithril";
 
 export default class Modal {
-  constructor(onclose) {
+  onclose: any;
+
+  constructor(onclose: any) {
     this.onclose = onclose;
   }
 
-  view(vnode) {
+  view(vnode: any) {
     return m("div.modal", [
       m("span.close", { onclick: this.onclose }, "X"),
       m("div.content", vnode.children)

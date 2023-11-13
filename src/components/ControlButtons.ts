@@ -1,6 +1,9 @@
 import m from "mithril";
 
 export default class ControlButtons {
+  onEnter: any;
+  onBackspace: any;
+
   constructor(onEnter: any, onBackspace: any) {
     this.onEnter = onEnter;
     this.onBackspace = onBackspace;

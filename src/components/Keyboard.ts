@@ -4,12 +4,14 @@ import Util from "../Util";
 
 export default class Keyboard {
   callback: any;
+  blackKeys: any[];
+  whiteKeys: any[];
 
-  constructor(callback) {
+  constructor(callback: any) {
     this.callback = callback;
   }
 
-  initShapes(ctx) {
+  initShapes(ctx: CanvasRenderingContext2D) {
     const width = ctx.canvas.clientWidth;
     const height = ctx.canvas.clientHeight;
     const keyWidth = width / 7;
@@ -20,17 +22,17 @@ export default class Keyboard {
       (2/3)*keyWidth, height/2
     ]);
 
-    this.whiteKeys = Array(7).fill().map((_, i) => [
+    this.whiteKeys = Array(7).fill(null).map((_, i) => [
       i*keyWidth, 0,
       keyWidth, height
     ]);
   }
 
-  _inBounds(px, py, x, y, w, h) {
+  _inBounds(px: number, py: number, x: number, y: number, w: number, h: number): boolean {
     return px >= x && py >= y && px <= (x + w) && py <= (y + h);
   }
 
-  onclick(e) {
+  onclick(e: any) {
     const px = e.offsetX;
     const py = e.offsetY;
 
@@ -45,7 +47,7 @@ export default class Keyboard {
     }
   }
 
-  drawKeyboard(ctx) {
+  drawKeyboard(ctx: CanvasRenderingContext2D) {
     this.initShapes(ctx);
 
     ctx.fillStyle = "white";
@@ -81,7 +83,7 @@ export default class Keyboard {
 
   view() {
     const attrs = {
-      oncreate: (vnode) => {
+      oncreate: (vnode: any) => {
         const ctx = vnode.dom.getContext("2d");
         this.drawKeyboard(ctx);
         vnode.dom.addEventListener("click", this.onclick.bind(this));

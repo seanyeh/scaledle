@@ -1,6 +1,7 @@
 {
   "scripts": {
     "build": "rm -rf docs && npx parcel build index.html --dist-dir=docs --no-scope-hoist --public-url=/scaledle",
+    "check-types": "tsc --noEmit",
     "serve": "npx parcel serve index.html"
   },
   "dependencies": {
@@ -9,6 +10,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.10.2",
+    "@types/mithril": "^2.2.4",
     "parcel": "^2.10.2"
   }
 }

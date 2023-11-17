@@ -12,3 +12,5 @@ Check it out at [https://seanyeh.github.io/scaledle](https://seanyeh.github.io/s
 npm install
 npm run serve
 ```
+
+You can now visit `http://localhost:1234` in your browser
